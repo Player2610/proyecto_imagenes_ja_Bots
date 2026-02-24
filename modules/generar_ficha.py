@@ -14,7 +14,11 @@ def vista_generar_ficha():
     if st.button("🚀 Generar ficha"):
         if nombre_producto:
             with st.spinner("Generando contenido..."):
-                texto = generar_ficha_producto(nombre_producto)
+                try:
+                    texto = generar_ficha_producto(nombre_producto)
+                except Exception as e:
+                    st.error(str(e))
+                    st.stop()
             try:
                 ficha = json.loads(texto)
             except json.JSONDecodeError:
