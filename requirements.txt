@@ -1,4 +1,6 @@
 streamlit
 openai
 pillow
+pillow-avif-plugin
 pyngrok
+requests
